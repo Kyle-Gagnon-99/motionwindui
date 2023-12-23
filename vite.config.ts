@@ -11,5 +11,6 @@ export default defineConfig({
         setupFiles: ["./src/setupTests.ts"],
         environment: "jsdom",
     },
+    assetsInclude: ["/sb-preview/runtime.js"],
     plugins: [react()],
 });

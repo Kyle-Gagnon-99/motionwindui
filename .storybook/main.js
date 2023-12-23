@@ -14,12 +14,6 @@ const config = {
     },
     docs: {
         autodocs: "tag",
-    },
-    async viteFinal(config) {
-        // Merge custom configuration into the default config
-        return mergeConfig(config, {
-            assetsInclude: ["/sb-preview/runtime.js"], // Bug workaround, see https://github.com/storybookjs/storybook/issues/25256
-        });
-    },
+    }
 };
 export default config;
