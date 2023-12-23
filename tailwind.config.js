@@ -57,7 +57,7 @@ export default {
                     900: 'rgb(var(--warning-900) / <alpha-value>)',
                 },
                 'success': {
-                    DEFAULT: 'rgb(var(--success-500) / <alpha-value>)',
+                    DEFAULT: 'rgb(var(--success-600) / <alpha-value>)',
                     100: 'rgb(var(--success-100) / <alpha-value>)',
                     200: 'rgb(var(--success-200) / <alpha-value>)',
                     300: 'rgb(var(--success-300) / <alpha-value>)',
@@ -69,7 +69,7 @@ export default {
                     900: 'rgb(var(--success-900) / <alpha-value>)',
                 },
                 'danger': {
-                    DEFAULT: 'rgb(var(--danger-500) / <alpha-value>)',
+                    DEFAULT: 'rgb(var(--danger-600) / <alpha-value>)',
                     100: 'rgb(var(--danger-100) / <alpha-value>)',
                     200: 'rgb(var(--danger-200) / <alpha-value>)',
                     300: 'rgb(var(--danger-300) / <alpha-value>)',

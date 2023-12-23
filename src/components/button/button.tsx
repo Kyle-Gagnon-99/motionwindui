@@ -22,6 +22,12 @@ export interface ButtonProps
     animate?: boolean;
     /** Whether or not the animate should occur on the element when disbaled, even if animate is enabled */
     animateOnDisable?: boolean;
+    /** Indicates if this button is in the loading state */
+    isLoading?: boolean;
+    /** An override on loading text. By default it is "Loading" */
+    loadingText?: string;
+    /** Whether or not to include the spinner while in the default state. By default it is enabled. */
+    includeSpinner?: boolean;
 }
 
 /**
@@ -34,22 +40,28 @@ function Button({
     size = "default",
     animate = true,
     animateOnDisable = false,
+    isLoading = false,
+    //loadingText = "Loading",
+    //includeSpinner = true,
     rounded,
     spacing,
     children,
     disabled,
     ...props
 }: ButtonProps) {
+    const disabledState = disabled || isLoading;
     const motionProps =
-        animate && (!disabled || animateOnDisable)
+        animate && (!disabledState || animateOnDisable)
             ? (props as MotionProps)
             : {};
 
-    return animate && (!disabled || animateOnDisable) ? (
+    return animate && (!disabledState || animateOnDisable) ? (
         <motion.button
             className={clsxMerge(
                 buttonStyles({
-                    buttonType: `${intent}-${variant}`,
+                    buttonType: !isLoading
+                        ? `${intent}-${variant}`
+                        : `${intent}-${variant}-loading`,
                     size,
                     rounded,
                     spacing,
@@ -59,7 +71,7 @@ function Button({
             whileTap={{
                 scale: 0.9,
             }}
-            disabled={disabled}
+            disabled={disabledState}
             {...motionProps}
         >
             {children}
@@ -76,7 +88,7 @@ function Button({
                 }),
             )}
             type="button"
-            disabled={disabled}
+            disabled={disabledState}
             {...props}
         >
             {children}

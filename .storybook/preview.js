@@ -1,4 +1,5 @@
 /** @type { import('@storybook/react').Preview } */
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import "../src/styles/motionwindui.css";
 const preview = {
     parameters: {
@@ -11,5 +12,16 @@ const preview = {
         },
     },
 };
+
+export const decorators = [
+    withThemeByDataAttribute({
+        themes: {
+            light: 'light',
+            dark: 'dark',
+        },
+        defaultTheme: 'light',
+        attributeName: 'data-mode',
+    }),
+];
 
 export default preview;
