@@ -1,0 +1,9 @@
+Use this new color palette for primary, secondary, accent, text, and backgrond:
+
+https://www.realtimecolors.com/?colors=02090f-f9fafb-2fa5f9-a6a8c4-e37957&fonts=Sarabun-Sarabun
+
+Then for success, warning, and danger use
+
+https://anice.red/#2FA5F9
+
+Shades can be created by moving the lightness (in HSL)
